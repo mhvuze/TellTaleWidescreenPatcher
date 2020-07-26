@@ -174,15 +174,19 @@ namespace TellTaleWidescreenPatcher
                 byte[] hexRatio = { };
                 if (Form1.GetResolution() == 0)
                 {
-                    hexRatio = new byte[] { 0x26, 0xB4, 0x17, 0x40 };
+                    hexRatio = new byte[] { 0x26, 0xB4, 0x17, 0x40 };   // 2560x1080 and multiples
                 }
                 else if (Form1.GetResolution() == 1)
                 {
-                    hexRatio = new byte[] { 0x8E, 0xE3, 0x18, 0x40 };
+                    hexRatio = new byte[] { 0x8E, 0xE3, 0x18, 0x40 };   // 3440x1440 and multiples
                 }
                 else if (Form1.GetResolution() == 2)
                 {
-                    hexRatio = new byte[] { 0x39, 0x8E, 0x63, 0x40 };
+                    hexRatio = new byte[] { 0x39, 0x8E, 0x63, 0x40 };   // 32:9
+                }
+                else if (Form1.GetResolution() == 3)
+                {
+                    hexRatio = new byte[] { 0xAB, 0xAA, 0x0A, 0x40 };   // 2340x1080 (Xiaomi Mi 9T Pro)
                 }
 
                 if (fixOffset > 0)
